@@ -152,13 +152,23 @@ let greatestLoss = 0;
 
 for (let i = 0; i < finances.length-2; i++) {
   const arrayPosition = finances[i];
-  const numbers = arrayPosition[0];
-  const Date = arrayPosition[1];
-  
-  if() {
-    rollingTotal++;
-  }
+  const numbers = arrayPosition[1];
+  const Date = arrayPosition[0];
+rollingTotal += numbers
+
+console.log(Date);
 }
+  
+//   if(rollingTotal.Date < numbers.Date) { 
+//     rollingTotal++;
+//     console.log("The greatest increase is at " + rollingTotal + Date);
+//   }
+
+//   else if(rollingTotal.Date > numbers.Date) { 
+//     rollingTotal++;
+//     console.log("The greatest decrease is at " + rollingTotal + Date);
+//   }
+// }
 
 // LAURA'S PSEUDOCODE BELOW
 // The greatest increase in Profit / Losses(date and amount) over the entire period.
@@ -195,13 +205,3 @@ Greatest increase (Month , Amount) =
 Greatest loss (Month , Amount) = 
 Average of the changes =
 `)
-
-
-//// OLD CODE ///
-
-for (let i = 0; i < finances.length; i++) {
-  const arrayPosition = finances[i];
-  const numbers = arrayPosition[1];
-  var Date = arrayPosition[0];
-  greatestIncrease + numbers.Date
-}
