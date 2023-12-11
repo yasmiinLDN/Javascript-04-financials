@@ -195,3 +195,13 @@ Greatest increase (Month , Amount) =
 Greatest loss (Month , Amount) = 
 Average of the changes =
 `)
+
+
+//// OLD CODE ///
+
+for (let i = 0; i < finances.length; i++) {
+  const arrayPosition = finances[i];
+  const numbers = arrayPosition[1];
+  var Date = arrayPosition[0];
+  greatestIncrease + numbers.Date
+}
