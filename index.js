@@ -115,20 +115,6 @@ console.log("The average change is $" + averageChange);
 ////// END OF 3 /////
 
 
-var month;
-let rollingTotal = 0;
-let greatestIncrease = 0;
-let greatestLoss = 0;
-
-for (let i = 0; i < finances.length-2; i++) {
-  const arrayPosition = finances[i];
-  const numbers = arrayPosition[1];
-  const Date = arrayPosition[0];
-rollingTotal += numbers
-}
-
-console.log(Date);
-
 /// below finds the lowest and highest month but doesn't answer the question //
 
 const maxMonth = {
