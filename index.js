@@ -95,66 +95,64 @@ var month = finances.length;
 
 let totalProfitLoss = 0;
 
-for (let i = 0; i < finances.length; i++) { // CHECK IF IT SHOULD BE <= OR JUST < AS SHOWN
-  const arrayPosition = finances[i];
-  const numbers = arrayPosition[1];
+for (let i = 0; i < finances.length; i++) {
+  // const arrayPosition = finances[i];
+  // const numbers = arrayPosition[1];
+  numbers = finances[i][1]
   totalProfitLoss += numbers
 }
 
-console.log("The total profit/loss is £" + totalProfitLoss);
+// 3 The average of the changes in Profit/Losses over the entire period./ --> CHANGE 
+
+let amounts = [];
+let totalChange = 0;
+
+for (let i = 0; i < finances.length - 1; i++) {
+  amounts = finances[i + 1][1] - finances[i][1];
+  totalChange += amounts;
+}
+
+var averageChange = Math.round(((totalChange/(month - 1))) * 100) / 100;
 
 
-// 3 The total number of months included in the dataset/
+// 4) The greatest increase in Profit/Losses (date and amount) over the entire period.
+// 5) The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
-var averageChange = Math.round((totalProfitLoss / (finances.length - 1)) * 100) / 100
+let rollingTotal = 0;
+let greatestLoss = 0;
+let greatestGain = 0;
+let lossMonth = 0;
+let gainMonth = 0;
 
+for (let i = 0; i < finances.length; i++) {
+  const arrayPosition = finances[i];
+  const second = arrayPosition[1];
 
-console.log("The average change is $" + averageChange);
-
-
-////// END OF 3 /////
-
-
-/// below finds the lowest and highest month but doesn't answer the question //
-
-const maxMonth = {
-  monthName: '',
-  profit: 0,
-};
-
-const minMonth = {
-  monthName: '',
-  profit: 0,
-};
-
-finances.forEach((month) => {
-  if (month[1] > maxMonth.profit) {
-    maxMonth.monthName = month[0];
-    maxMonth.profit = month[1];
+  if (i > 0) {
+    prevmonth = finances[i - 1]
+    let difference = second - prevmonth[1]
+    if (difference > greatestGain) {
+      greatestGain = difference
+      gainMonth = arrayPosition[0]
+    }
+    if (difference < greatestLoss) {
+      greatestLoss = difference
+      lossMonth = arrayPosition[0]
+    }
   }
+}
 
-  if (month[1] < minMonth.profit) {
-    minMonth.monthName = month[0];
-    minMonth.profit = month[1];
-  }
-
-  return { maxMonth, minMonth };
-});
-
-console.log('The month with max profit is : ', maxMonth);
-console.log('The month with min profit is : ', minMonth);
-/////// END OF PART-SOLUTION
+////// END OF 4 and 5 /////
 
 /// FINAL CODE BELOW
 
 console.log(`Financial Analysis
 -----------------------------
-Total number of months = ${months}
+Total number of months = ${month}
 Total amount of profit = ${totalProfitLoss}
-Average Change: ${averageChange}
-Greatest increase (Month , Amount) = 
-Greatest loss (Month , Amount) = 
-Average of the changes =
+Average Change = ${averageChange}
+Greatest increase (Month , Amount) = (${gainMonth}, $${greatestGain})
+Greatest loss (Month , Amount) = (${lossMonth}, $${greatestLoss})
 `)
 
 
@@ -175,29 +173,29 @@ Average of the changes =
 // Your task is to write JavaScript code that analyzes the records to calculate each of the following:
 
 // The total number of months included in the dataset.
-  // finances.length
+// finances.length
 
 // The net total amount of Profit / Losses over the entire period.
-  // Need a variable for Profits/Losses
-  // Need to be able to compare the data for the loop that we're on to the data from the previous loop
-    // Need variables for current & previous once we start the loop
-    // Need an if statement to make sure we're on at least month 2 (array index 1) before starting to figure profits & losses
+// Need a variable for Profits/Losses
+// Need to be able to compare the data for the loop that we're on to the data from the previous loop
+// Need variables for current & previous once we start the loop
+// Need an if statement to make sure we're on at least month 2 (array index 1) before starting to figure profits & losses
 
 // The average of the changes in Profit / Losses over the entire period.
-  // Need a variable to track the average change
-  // That will make use of the current & previous variables we set up before
+// Need a variable to track the average change
+// That will make use of the current & previous variables we set up before
 // You will need to track what the total change in Profit / Losses are from month to month and then find the average.
 // (Total / (Number of months - 1))
 
 // The greatest increase in Profit / Losses(date and amount) over the entire period.
-  // Need a variable for the greatest increase
-  // On each iteration, compare the current change in profits/losses to what's currently stored
-  // If the change is more, replace what's currently stored in the variable
+// Need a variable for the greatest increase
+// On each iteration, compare the current change in profits/losses to what's currently stored
+// If the change is more, replace what's currently stored in the variable
 
 // The greatest decrease in Profit / Losses(date and amount) over the entire period.
-  // Need a variable for the greatest decrease
-  // On each iteration, compare the current change in profits/losses to what's currently stored
-  // If the loss is greater, replace what's currently stored in the variable
+// Need a variable for the greatest decrease
+// On each iteration, compare the current change in profits/losses to what's currently stored
+// If the loss is greater, replace what's currently stored in the variable
 
 // variables:
 // total number of months
