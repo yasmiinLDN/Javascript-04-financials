@@ -102,7 +102,7 @@ for (let i = 0; i < finances.length; i++) {
 
 // 3 The average of the changes in Profit/Losses over the entire period./ --> CHANGE 
 
-let amounts = [];
+let amounts = 0;
 let totalChange = 0;
 
 for (let i = 0; i < finances.length - 1; i++) {
@@ -138,8 +138,6 @@ for (let i = 0; i < finances.length; i++) {
   }
 }
 
-////// END OF 4 and 5 /////
-
 /// FINAL CODE BELOW
 
 console.log(`Financial Analysis
@@ -152,7 +150,7 @@ Greatest loss (Month , Amount) = (${lossMonth}, $${greatestLoss})
 `)
 
 
-//////////////////////////////////    BOBBI NOTES BELOW    //////////////////////////////////
+//////////////////////////////////    BOBBI TUTORING NOTES BELOW    //////////////////////////////////
 
 // create a loop which accounts for each element: month, year, amount(profit/loss)
 // create additional (new) variables which are included in the for loop to store the information (as above)
