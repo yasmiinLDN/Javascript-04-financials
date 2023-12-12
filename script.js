@@ -143,8 +143,8 @@ for (let i = 0; i < finances.length; i++) {
 console.log(`Financial Analysis
 -----------------------------
 Total number of months = ${month}
-Total amount of profit = ${totalProfitLoss}
-Average Change = ${averageChange}
+Total amount of profit = $${totalProfitLoss}
+Average Change = $${averageChange}
 Greatest increase (Month , Amount) = (${gainMonth}, $${greatestGain})
 Greatest loss (Month , Amount) = (${lossMonth}, $${greatestLoss})
 `)
