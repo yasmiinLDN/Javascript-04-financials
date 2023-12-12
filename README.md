@@ -30,7 +30,7 @@ This project involved employing a number of javascript functions and concepts to
 
 Below shows the layout of the final console:
 
-![screenshot of index.html](./Financial%20Analysis%20-%20screenshot.png)
+![screenshot of console](./Financial%20Analysis%20-%20screenshot.png)
 
 
 ## Credits
