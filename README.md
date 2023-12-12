@@ -30,7 +30,7 @@ This project involved employing a number of javascript functions and concepts to
 
 Below shows the layout of the final console:
 
-![screenshot of console](./screenshot.png)
+![screenshot of console](/screenshot.png)
 
 
 ## Credits
