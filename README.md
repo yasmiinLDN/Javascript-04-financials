@@ -32,6 +32,8 @@ Below shows the layout of the final console:
 
 ![screenshot of console](/screenshot.png)
 
+https://yasmiinldn.github.io/Yasmiin-Console-Finances/
+
 
 ## Credits
 
